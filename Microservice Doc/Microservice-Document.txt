@@ -1,0 +1,52 @@
+
+Attributes
+	Product ID 
+	Product Name 
+	Product Description 
+	Product Rating
+
+product-rating-service
+	productID
+	productRating
+	
+product-info-service
+	productID
+	productName
+	productDescription
+	
+product-catalog-service
+	productName
+	productDescription
+	productRating
+
+============================================
+
+Sample values:
+	100 -- Woodlands Shoes -- Desc for Woodlands shoes -- 4
+	200 -- Denim Jeans     -- Desc for Denim Jeans     -- 3
+	300 -- U.S. Polo tees  -- Desc for U.S. Polo tees  -- 4
+	400 -- Crocs           -- Desc for Crocs           -- 5
+	500 -- Ray Ban         -- Desc for Ray Ban         -- 4
+	
+Input:
+	100
+	
+Output:
+	100 -- Woodlands Shoes -- Desc for Woodlands shoes -- 4
+
+	
+Orchestration Logic:
+	Rest call to product-rating-service with productID
+		Input - 100
+		Output 
+			100 -- 4
+			
+	Rest call to product-info-service with productID
+		Inout - 100
+		Output
+			100 -- Woodlands Shoes -- Desc for Woodlands shoes
+			
+	Final Output:
+			100 -- Woodlands Shoes -- Desc for Woodlands shoes -- 4
+	
+============================================	
